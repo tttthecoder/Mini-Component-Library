@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-
 const VisuallyHidden = ({ children, ...delegated }) => {
   const [forceShow, setForceShow] = React.useState(false);
-
   React.useEffect(() => {
     if (process.env.NODE_ENV !== 'production') {
       const handleKeyDown = (ev) => {
@@ -29,7 +27,6 @@ const VisuallyHidden = ({ children, ...delegated }) => {
   if (forceShow) {
     return children;
   }
-
   return <Wrapper {...delegated}>{children}</Wrapper>;
 };
 
